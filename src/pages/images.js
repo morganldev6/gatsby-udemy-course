@@ -1,12 +1,13 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import Img from 'gatsby-image';
+import Image from '../examples/Image';
 
 const Images = () => {
   return (
     <Layout>
       <div>This is the images page</div>
-      <Img />
+      {/* <Img /> */}
+      <Image />
     </Layout>
   );
 };
