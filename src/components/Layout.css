@@ -1,0 +1,9 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title {
+  color: rebeccapurple;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
