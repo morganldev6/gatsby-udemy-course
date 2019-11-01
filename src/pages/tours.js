@@ -1,8 +1,36 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import Tours from '../components/Tours/Tours';
+import { graphql } from 'gatsby';
 
-const Tours = () => {
-  return <Layout>This is the tours page</Layout>;
+const tours = ({ data }) => {
+  return (
+    <Layout>
+      <Tours tours={data.tours.edges} />
+    </Layout>
+  );
 };
 
-export default Tours;
+export const getTours = graphql`
+  query {
+    tours: allContentfulTour {
+      edges {
+        tour: node {
+          name
+          price
+          slug
+          country
+          days
+          id: contentful_id
+          images {
+            fluid {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default tours;
